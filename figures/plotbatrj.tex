@@ -1,0 +1,32 @@
+% \documentclass{standalone}
+% \usepackage{tikz}
+% \usepackage{pgfplots}
+
+% \begin{document}
+
+\begin{tikzpicture}
+\begin{axis}[
+    axis equal=true,
+    small,
+    width=10cm,
+    height=6cm,
+    title={Trajectories: \textit{Dataset Room}},
+    xlabel={x [m]},
+    ylabel={y [m]},
+    grid=major,
+    grid style={dotted},
+    % xmin=0,xmax=85,
+    % grid=major,
+    legend style={
+      at={(0.6,0.75)},
+      font=\footnotesize,
+    },
+]
+\addplot [black,thick] table {figures/ba-r4-007.traj-odoerrTruetrj.dat};
+\addplot [red,densely dashed] table {figures/ba-r4-007.traj-odoerrOdometrytrj.dat};
+\addplot [blue,thin] table {figures/ba-r4-007.traj-odoerrORB-SLAMtrj.dat};
+\addplot [green!50!black!80,thick] table {figures/ba-r4-007.traj-odoerrOurstrj.dat};
+\legend{Truth,Odometry,ORB-SLAM, Ours},
+\end{axis}
+\end{tikzpicture}
+% \end{document}

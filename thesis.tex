@@ -1,0 +1,91 @@
+%!TEX engine=xelatex
+\documentclass[12pt,a4paper,twoside]{report}
+% Revised by ZHENG Fan (fzheng@link.cuhk.edu.hk) according to
+% CUHK Grad. School's requirements on thesis format. Check:
+%   https://www.gradsch.cuhk.edu.hk/pgstudent/gsinfo/research/Chapter%206.html
+
+%=======================================================
+% handle Chinese and fonts
+% CUHK has no limitations on font-types
+\usepackage{fontspec}
+\usepackage{xeCJK}
+\setCJKmainfont{Noto Serif CJK TC} % 需安装该字体；可自行更改为系统字体
+%=======================================================
+\input{format/style}
+\input{format/symbols}
+%=======================================================
+% margins and spacing required by CUHK Grad-School
+% 4 cm margin for binding edge, 2.5 cm for outer edge:
+\usepackage[inner=4cm,outer=2.5cm]{geometry}
+\usepackage{setspace}
+% 1.5 line spacing for normal texts:
+\setstretch{1.5}
+% avoid too much space automatically padded between paragraphs to fill a page:
+\raggedbottom
+%=======================================================
+% personally imported packages and customization
+\usepackage[mono=false]{libertine} % I personally favour this font
+\usepackage{subfig}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\graphicspath{{figures/}}
+\usepackage[authoryear,square]{natbib} % citation style management
+\def\cite{\citep}
+% CUHK has no limitations on bibliography style, use your favor.
+%\bibliographystyle{ieeetr} % for 'nubmers' citation style
+\bibliographystyle{apalike} % for 'authoryear' citation style
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=magenta]{hyperref}
+%=======================================================
+\begin{document}
+
+\thesistitle{The CUHK Thesis Title}
+\thesistitlezh{香港中文大學學位論文標題}
+\authorname{ZHENG, Fan}
+\degree{Doctor of Philosophy}
+\programme{Mechanical and Automation Engineering}
+\institution{The Chinese University of Hong Kong}
+\submitdate{March 1874}
+\committee{
+	Professor ZHANG San (Chair)\\
+	Professor LI Si (Thesis Supervisor)\\
+	Professor WANG Wu (Thesis Co-supervisor)\\
+	Professor ZHAO Liu (Committee Member)\\
+	Professor WHO Ever (External Examiner)
+}
+\coverpage
+
+%=======================================================
+\pagenumbering{roman}
+\abstractpage
+%=======================================================
+\acknowledgementpage
+%=======================================================
+\tableofcontents
+\listoffigures
+\listoftables
+\input{sections/symbols-and-acronyms.tex}
+%=======================================================
+
+\newpage
+\setcounter{page}{0}
+\pagenumbering{arabic}
+\pagestyle{headings}
+%=======================================================
+%insert the chapters
+\input{sections/introduction.tex}
+\input{sections/chapter-one.tex}
+\input{sections/chapter-two.tex}
+\input{sections/conclusion.tex}
+
+%=======================================================
+\appendix
+\input{sections/proof.tex}
+\input{sections/publications.tex}
+%=======================================================
+\newpage
+% CUHK recommend single-spaced references
+\setstretch{1}
+\bibliography{database}
+
+\end{document}
+

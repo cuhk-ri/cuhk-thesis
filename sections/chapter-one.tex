@@ -1,0 +1,35 @@
+\chapter{Topic One}
+\label{chap:topic-one}
+\def\summarynote{
+  This chapter presents \ldots\ldots
+}
+\snote{Summary}{\summarynote}
+
+\section{Figure Example with tikz}
+\label{sec:figure-tikz}
+
+Check Figure \ref{fig:tikz}.
+
+\begin{figure}[h]
+  \centering
+  \input{figures/pose_motivation.tex}
+  \caption{Plotting figures using tikz like this.}
+  \label{fig:tikz}
+\end{figure}
+
+
+\section{Figure Example with pgfplots}
+\label{sec:figure-pgfplots}
+
+Check Figure \ref{fig:pgfplots}.
+
+\begin{figure}[h]
+  \centering
+  \input{figures/plotbatrj.tex}
+  \caption{Plotting figures using pgfplots like this.}
+  \label{fig:pgfplots}
+\end{figure}
+
+\clearpage
+\snote{Summary}{\summarynote}
+\chapterend

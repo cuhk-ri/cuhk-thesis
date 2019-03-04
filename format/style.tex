@@ -1,0 +1,146 @@
+\usepackage{latexsym}
+\usepackage{xcolor}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{url}
+\usepackage{amsthm}
+\usepackage{tocbibind}
+\usepackage{bm}
+\usepackage{mathtools}
+\usepackage{graphicx}
+
+\def\degree#1{\def\degree{#1}}
+\def\programme#1{\def\programme{#1}}
+\def\supervisor#1{\def\supervisor{#1}}
+\def\thesistitle#1{\def\thesistitle{#1}}
+\def\thesistitlezh#1{\def\thesistitlezh{#1}}
+\def\authorname#1{\def\authorname{#1}}
+\def\submitdate#1{\def\submitdate{#1}}
+\def\institution#1{\def\institution{#1}}
+\def\committee#1{\def\committee{#1}}
+\def\thecommittee#1{\def\thecommittee{#1}}
+
+\def\coverpage{
+  % no page number for the cover page
+  \thispagestyle{empty}
+
+  \vspace*{2cm}
+  \begin{center}
+    \LARGE {\bf \thesistitle}
+
+    \vskip 1cm
+    \large \authorname
+
+    \vskip 1cm
+    \large
+  % both Fulfilment and Fulfillment are correct
+    A Thesis Submitted in Partial Fulfilment \\
+    of the Requirements for the Degree of \\
+    \degree \\
+    in \\
+    \programme \\
+
+    \vfill
+    \large \institution \\
+    \submitdate
+  \end{center}
+
+  \newpage
+
+  \thispagestyle{empty}
+  \vspace*{10mm}
+  \begin{center}
+    \vfill
+    \large
+    \underline{\bf Thesis Assessment Committee}
+    \vskip 1.5cm
+    \committee
+    \vfill
+  \end{center}
+  \normalsize
+  \newpage
+}
+
+%=======================================================
+
+\def\abstractpage{
+  \chapter*{Abstract}
+  \addcontentsline{toc}{chapter}{Abstract}
+
+  of thesis entitled: \\
+  \indent \underline{\thesistitle} \\
+  Submitted by \authorname \\
+  for the degree of \degree \\
+  at \institution~in \submitdate
+
+  \vskip 1cm \noindent
+  \input{sections/abstract.tex}
+  \vfill
+
+  \vspace*{1.5cm}
+  \chapter*{摘要}
+  \addcontentsline{toc}{chapter}{摘要}
+  \noindent 論文題目：\underline{\thesistitlezh}
+  \vskip 1cm
+  \input{sections/abstract-zh.tex}
+  \clearpage
+}
+
+%=======================================================
+
+\def\acknowledgementpage{%
+  \chapter*{Acknowledgement}
+  \addcontentsline{toc}{chapter}{Acknowledgement}
+  \input{sections/acknowledgement.tex}
+  \newpage
+}
+
+%=======================================================
+
+\def\dedicationpage{%
+  \vspace*{1cm}
+  \vfill
+  \begin{center}
+    \input{sections/dedication.tex}
+  \end{center}
+  \vfill
+  \newpage
+}
+
+%=======================================================
+
+\newcommand{\snote}[2]{%
+  \vspace*{3mm}
+  \begin{center}
+    \framebox[13.6cm][t]{%
+      \hspace*{2mm}
+      \parbox[t]{12.8cm}{%
+        \vspace*{2mm}
+        \centerline{\bf #1}\vspace*{-2mm}
+        \rule{12.8cm}{0.4mm} 
+        \\#2
+        \vspace*{3mm}
+      }
+    }
+  \end{center}
+  \vspace*{3mm}
+}
+
+\newcommand{\chapterend}{
+  \vfill
+  \noindent\rule{\textwidth}{0.5mm} \\
+  \noindent{\large\bf $\Box$ End of chapter.}
+}
+
+\newcommand{\reading}[1]{
+  \vfill
+  \noindent {\bf $\equiv$ Readings:}  #1
+}
+
+
+\theoremstyle{remark} \newtheorem{remark}{Remark}
+\theoremstyle{remark} \newtheorem*{note}{Note}
+\theoremstyle{definition} \newtheorem{assumption}{Assumption}
+\theoremstyle{definition} \newtheorem*{problem}{Problem}
+\theoremstyle{definition} \newtheorem{definition}{Definition}
