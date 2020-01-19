@@ -8,8 +8,8 @@
 % handle Chinese and fonts
 % CUHK has no limitations on font-types
 \usepackage{fontspec}
-\usepackage{xeCJK}
-\setCJKmainfont{Noto Serif CJK TC} % 需安装该字体；可自行更改为系统字体
+\usepackage[scheme=plain]{ctex}
+% \setCJKmainfont{SimSun} % 可自行更改为系统字体
 %=======================================================
 \input{format/style}
 \input{format/symbols}
@@ -39,7 +39,7 @@
 \begin{document}
 
 \thesistitle{The CUHK Thesis Title}
-\thesistitlezh{香港中文大學學位論文標題}
+\thesistitlezh{香港中文大学学位论文标题} % CUHK 对简繁体不作要求
 \authorname{ZHENG, Fan}
 \degree{Doctor of Philosophy}
 \programme{Mechanical and Automation Engineering}
